@@ -105,3 +105,20 @@ Validation & Processing
   │
   ▼
 User Interface
+## 📸 Screenshots
+
+### Dashboard
+
+![Logic2Code AI Dashboard](screenshots/Dashboard.png)
+
+### Logic → Code
+
+![Logic to Code](screenshots/Logic-code.png)
+
+### Debug
+
+![Debug](screenshots/Debug.png)
+
+### Practice Mode
+
+![Practice Mode](screenshots/Practice.png)
