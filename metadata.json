@@ -1,0 +1,6 @@
+{
+  "name": "Logic2Code AI",
+  "description": "Turn your programming logic, algorithms, and pseudocode into clean, working source code with AI-powered code generation, review, and explanation.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

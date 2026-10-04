@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        try {
+          var win = typeof window !== 'undefined' ? window : (typeof globalThis !== 'undefined' ? globalThis : null);
+          if (!win) return;
+          var proto = typeof Window !== 'undefined' ? Window.prototype : null;
+          var currentFetch = win.fetch;
+
+          function createDescriptor(existingDesc) {
+            return {
+              get: function() {
+                return this._app_fetch || (existingDesc && existingDesc.get ? existingDesc.get.call(this) : currentFetch);
+              },
+              set: function(fn) {
+                this._app_fetch = fn;
+                try {
+                  Object.defineProperty(this, 'fetch', {
+                    value: fn,
+                    writable: true,
+                    configurable: true,
+                    enumerable: true
+                  });
+                } catch(e) {}
+              },
+              configurable: true,
+              enumerable: true
+            };
+          }
+
+          if (proto) {
+            try {
+              var protoDesc = Object.getOwnPropertyDescriptor(proto, 'fetch');
+              Object.defineProperty(proto, 'fetch', createDescriptor(protoDesc));
+            } catch(e) {}
+          }
+
+          try {
+            var winDesc = Object.getOwnPropertyDescriptor(win, 'fetch');
+            Object.defineProperty(win, 'fetch', createDescriptor(winDesc));
+          } catch(e) {}
+        } catch(e) {}
+      })();
+    </script>
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('logic2code_theme');
+          if (savedTheme === 'light') {
+            document.documentElement.classList.remove('dark');
+          } else {
+            document.documentElement.classList.add('dark');
+          }
+        } catch(e) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
+    <title>Logic2Code AI - Turn Your Logic Into Code</title>
+    <meta name="description" content="Turn your programming logic, algorithms, and pseudocode into clean, working source code with AI-powered code generation, review, and explanation." />
+    <meta property="og:title" content="Logic2Code AI - Turn Your Logic Into Code" />
+    <meta property="og:description" content="Turn your programming logic, algorithms, and pseudocode into clean, working source code with AI-powered code generation, review, and explanation." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
