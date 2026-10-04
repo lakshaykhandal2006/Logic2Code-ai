@@ -7,6 +7,9 @@ Logic2Code AI is an AI-powered programming mentor designed to help students and 
 It uses **Google Gemini** to convert programming logic into code, debug programs, explain code, optimize solutions, generate test cases, validate algorithms, and provide an interactive programming practice experience.
 
 ---
+## 🌐 Live Demo
+
+[**🚀 Try Logic2Code AI →**](https://logic2code-ai-700720859347.asia-southeast1.run.app)
 
 ## 🚀 Features
 
