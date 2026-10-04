@@ -79,7 +79,23 @@ Switch between dark and light themes with theme persistence.
 
 ### Storage
 - Browser LocalStorage for session/history data
+## 📸 Screenshots
 
+### Dashboard
+
+![Logic2Code AI Dashboard](screenshots/Dashboard.png)
+
+### Logic → Code
+
+![Logic to Code](screenshots/Logic-code.png)
+
+### Debug
+
+![Debug](screenshots/Debug.png)
+
+### Practice Mode
+
+![Practice Mode](screenshots/Practice.png)
 ---
 
 ## 🏗️ Architecture
@@ -105,20 +121,4 @@ Validation & Processing
   │
   ▼
 User Interface
-## 📸 Screenshots
 
-### Dashboard
-
-![Logic2Code AI Dashboard](screenshots/Dashboard.png)
-
-### Logic → Code
-
-![Logic to Code](screenshots/Logic-code.png)
-
-### Debug
-
-![Debug](screenshots/Debug.png)
-
-### Practice Mode
-
-![Practice Mode](screenshots/Practice.png)
